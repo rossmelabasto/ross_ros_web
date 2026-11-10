@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var l;try{l=localStorage.getItem('lang')}catch(e){}if(l!=='en'&&l!=='es'){var n=(navigator.languages&&navigator.languages[0])||navigator.language||'en';l=/^es/i.test(n)?'es':'en'}document.documentElement.dataset.lang=l;document.documentElement.lang=l})();</script>
+<title>rOS · a flavor of Arch Linux</title>
+<meta name="title-en" content="rOS · a flavor of Arch Linux">
+<meta name="title-es" content="rOS · un flavor de Arch Linux">
+<meta name="description" content="rOS is Rossmel Abasto's flavor of Arch Linux: a Wayland desktop built on niri and DankMaterialShell, ready from the first login. In development.">
+<meta name="theme-color" content="#0b0d0a">
+<meta property="og:title" content="rOS">
+<meta property="og:description" content="A flavor of Arch Linux built on niri and DankMaterialShell. In development.">
+<meta property="og:url" content="https://ros.rossmel.com/">
+<link rel="icon" href="assets/ros-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .ros-hero { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+  .ros-hero .mark { width: clamp(150px, 22vw, 260px); height: auto; filter: drop-shadow(0 0 60px rgba(175, 255, 0, 0.18)); }
+  @media (max-width: 760px) { .ros-hero { grid-template-columns: 1fr; gap: 28px; } .ros-hero .mark { order: -1; width: 120px; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/ros-logo-white.svg" alt=""><span>rOS</span></a>
+    <nav class="nav">
+      <a href="#features"><span lang="en">What's in it</span><span lang="es">Qué trae</span></a>
+      <a href="#status"><span lang="en">Status</span><span lang="es">Estado</span></a>
+      <a href="https://repo.rossmel.com"><span lang="en">Packages ↗</span><span lang="es">Paquetes ↗</span></a>
+    </nav>
+    <button class="lang" type="button">ES</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap ros-hero">
+      <div>
+        <p class="eyebrow"><span class="pill"><span lang="en">In development</span><span lang="es">En desarrollo</span></span> ros.rossmel.com</p>
+        <h1 lang="en">A flavor of <em>Arch Linux</em>, ready from the first login</h1>
+        <h1 lang="es">Un flavor de <em>Arch Linux</em>, listo desde el primer inicio</h1>
+        <p class="lead" lang="en">rOS is my take on Arch: a Wayland desktop built on niri and DankMaterialShell, with sensible defaults, a few tools of its own, and everything else straight from Arch.</p>
+        <p class="lead" lang="es">rOS es mi versión de Arch: un escritorio Wayland hecho con niri y DankMaterialShell, con buenos valores por defecto, algunas herramientas propias y todo lo demás directo de Arch.</p>
+        <div class="actions">
+          <a class="btn primary" href="#status"><span lang="en">Where it's at</span><span lang="es">En qué va</span></a>
+          <a class="btn" href="https://repo.rossmel.com"><span lang="en">Programs and packages</span><span lang="es">Programas y paquetes</span></a>
+        </div>
+      </div>
+      <img class="mark" src="assets/ros-logo-white.svg" alt="rOS">
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 lang="en">What's in it</h2>
+        <h2 lang="es">Qué trae</h2>
+        <p lang="en">rOS isn't a fork: Arch stays Arch. It adds a desktop that's set up for you and a signed repository with its own pieces.</p>
+        <p lang="es">rOS no es un fork: Arch sigue siendo Arch. Le suma un escritorio ya configurado y un repositorio firmado con sus propias piezas.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <span class="k">niri</span>
+          <h3 lang="en">Scrollable tiling</h3><h3 lang="es">Tiling con scroll</h3>
+          <p lang="en">Windows line up in columns you scroll through, so opening one never squeezes the others. Every monitor keeps its own workspaces.</p>
+          <p lang="es">Las ventanas se acomodan en columnas que recorres con scroll, así abrir una nunca aplasta a las demás. Cada monitor tiene sus propios espacios de trabajo.</p>
+        </div>
+        <div class="feature">
+          <span class="k">DankMaterialShell</span>
+          <h3 lang="en">The whole shell</h3><h3 lang="es">Todo el entorno</h3>
+          <p lang="en">Bar, launcher, notifications, control center and lock screen, with colors taken from your wallpaper.</p>
+          <p lang="es">Barra, lanzador, notificaciones, centro de control y pantalla de bloqueo, con los colores de tu fondo de pantalla.</p>
+        </div>
+        <div class="feature">
+          <span class="k" lang="en">Login and boot</span><span class="k" lang="es">Inicio y arranque</span>
+          <h3 lang="en">Consistent from the start</h3><h3 lang="es">Coherente desde el arranque</h3>
+          <p lang="en">A boot splash and the DankMaterialShell login screen, so the system looks like itself before you even sign in.</p>
+          <p lang="es">Una pantalla de arranque y el inicio de sesión de DankMaterialShell, para que el sistema se vea igual desde antes de entrar.</p>
+        </div>
+        <div class="feature">
+          <span class="k" lang="en">rOS tools</span><span class="k" lang="es">Herramientas de rOS</span>
+          <h3 lang="en">Small, useful scripts</h3><h3 lang="es">Scripts chicos y útiles</h3>
+          <p lang="en">Open apps on the dedicated GPU of a hybrid laptop, switch power profiles when you plug in or unplug, and update everything with one command.</p>
+          <p lang="es">Abre apps en la GPU dedicada de una laptop híbrida, cambia el perfil de energía al conectar o desconectar el cargador y actualiza todo con un comando.</p>
+        </div>
+        <div class="feature">
+          <span class="k">Arch</span>
+          <h3 lang="en">Arch underneath</h3><h3 lang="es">Arch por debajo</h3>
+          <p lang="en">Packages come from the official Arch repositories. rOS only adds its own signed repository, <code>[ros]</code>, on top.</p>
+          <p lang="es">Los paquetes vienen de los repositorios oficiales de Arch. rOS solo suma encima su propio repositorio firmado, <code>[ros]</code>.</p>
+        </div>
+        <div class="feature">
+          <span class="k" lang="en">Programs</span><span class="k" lang="es">Programas</span>
+          <h3 lang="en">Apps made for it</h3><h3 lang="es">Apps hechas para él</h3>
+          <p lang="en">Programs like <a href="https://repo.rossmel.com/ross-visualizer/">ross_visualizer</a>, which also run on any other distribution.</p>
+          <p lang="es">Programas como <a href="https://repo.rossmel.com/ross-visualizer/">ross_visualizer</a>, que también corren en cualquier otra distribución.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="status">
+    <div class="wrap"><div class="narrow">
+      <div class="section-head">
+        <h2 lang="en">Status</h2>
+        <h2 lang="es">Estado</h2>
+        <p lang="en">There's nothing to download yet: I'm packaging rOS piece by piece and testing each one on clean virtual machines before the first image.</p>
+        <p lang="es">Todavía no hay nada para descargar: estoy empaquetando rOS pieza por pieza y probando cada una en máquinas virtuales limpias antes de la primera imagen.</p>
+      </div>
+      <ol class="timeline">
+        <li class="done"><span class="state"><span lang="en">Done</span><span lang="es">Hecho</span></span><div><strong lang="en">System and desktop, as packages</strong><strong lang="es">Sistema y escritorio, como paquetes</strong><span class="d" lang="en">Base settings, the niri + DankMaterialShell desktop, the login screen and the rOS tools.</span><span class="d" lang="es">Los ajustes base, el escritorio con niri y DankMaterialShell, el inicio de sesión y las herramientas de rOS.</span></div></li>
+        <li class="done"><span class="state"><span lang="en">Done</span><span lang="es">Hecho</span></span><div><strong lang="en">Signed repository</strong><strong lang="es">Repositorio firmado</strong><span class="d" lang="en"><a href="https://repo.rossmel.com/#ros-packages"><code>[ros]</code></a>, with a mirror on GitHub so updates never get stuck.</span><span class="d" lang="es"><a href="https://repo.rossmel.com/#ros-packages"><code>[ros]</code></a>, con un espejo en GitHub para que las actualizaciones nunca se traben.</span></div></li>
+        <li class="now"><span class="state"><span lang="en">Next</span><span lang="es">Sigue</span></span><div><strong lang="en">Themes</strong><strong lang="es">Temas</strong><span class="d" lang="en">Icons, cursors and colors as packages of their own.</span><span class="d" lang="es">Íconos, cursores y colores como paquetes propios.</span></div></li>
+        <li><span class="state"><span lang="en">Later</span><span lang="es">Después</span></span><div><strong lang="en">Installer and the first image</strong><strong lang="es">Instalador y la primera imagen</strong><span class="d" lang="en">A graphical installer and a downloadable ISO.</span><span class="d" lang="es">Un instalador gráfico y una ISO para descargar.</span></div></li>
+      </ol>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="narrow">
+      <div class="callout">
+        <p lang="en"><strong>Looking for ross_visualizer?</strong> It moved, along with the package repository, to <a href="https://repo.rossmel.com/ross-visualizer/">repo.rossmel.com</a>. If you added the repository here, it keeps working for now; the new address is on <a href="https://repo.rossmel.com/repository/#moved">this page</a>.</p>
+        <p lang="es"><strong>¿Buscas ross_visualizer?</strong> Se mudó, junto con el repositorio de paquetes, a <a href="https://repo.rossmel.com/ross-visualizer/">repo.rossmel.com</a>. Si agregaste el repositorio aquí, por ahora sigue funcionando; la dirección nueva está en <a href="https://repo.rossmel.com/repository/#moved">esta página</a>.</p>
+      </div>
+    </div></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span lang="en">rOS is made by <a href="https://portfolio.rossmel.com">Rossmel Abasto</a>. Arch Linux is a trademark of its owners; rOS isn't affiliated with it.</span>
+    <span lang="es">rOS lo hace <a href="https://portfolio.rossmel.com">Rossmel Abasto</a>. Arch Linux es marca de sus dueños; rOS no está afiliado a ese proyecto.</span>
+    <nav>
+      <a href="https://repo.rossmel.com"><span lang="en">Packages</span><span lang="es">Paquetes</span></a>
+      <a href="https://github.com/rossmelabasto">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

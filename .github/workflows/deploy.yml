@@ -1,0 +1,48 @@
+name: Deploy
+
+# Publishes ros.rossmel.com, the page of rOS.
+#
+# The program repositories moved to repo.rossmel.com. Until everyone has switched, this site
+# also serves a copy of them at their old paths (/arch, /apt, /rpm, /key.asc, /check.sh), taken
+# from ross_visualizer's newest release on every deploy, so old configs keep updating.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '23 6 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy the old repository paths
+        run: |
+          set -euo pipefail
+          repo=rossmelabasto/ross_visualizer
+          tag=$(gh release list -R "$repo" --limit 1 --json tagName --jq '.[0].tagName')
+          mkdir -p _site
+          gh release download "$tag" -R "$repo" --pattern ross-visualizer-repos.tar.gz --output repos.tar.gz
+          tar xzf repos.tar.gz -C _site
+          gh api "repos/$repo/contents/scripts/check.sh?ref=$tag" -H 'Accept: application/vnd.github.raw' > _site/check.sh
+      - run: cp -r site/. _site/ && touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
